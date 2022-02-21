@@ -1,4 +1,3 @@
-
 const pegaArquivo = require('../index');
 
 const arrayResult = [
@@ -11,17 +10,17 @@ describe('pegaArquivo::', () => {
   it('deve ser uma função', () => {
     expect(typeof pegaArquivo).toBe('function');
   })
-  it('Deve retornar array com resultados', async () => {
-    const resultado = await pegaArquivo('C:\Users\Luky\Desktop\Códigos JS\NodeJS - Biblioteca\teste\arquivos\texto1.md') 
+  it('deve retornar array com resultados', async () => {
+    const resultado = await pegaArquivo('C:/Users/Luky/Desktop/Códigos JS/NodeJS/Biblioteca/test/arquivos/texto1.md') 
     expect(resultado).toEqual(arrayResult)
   })
   it('deve retornar mensagem "não há links"', async () => {
-    const resultado = await pegaArquivo('C:\Users\Luky\Desktop\Códigos JS\NodeJS - Biblioteca\teste\arquivos\texto1_semlinks.md')
+    const resultado = await pegaArquivo('C:/Users/Luky/Desktop/Códigos JS/NodeJS/Biblioteca/test/arquivos/texto1_semlinks.md')
     expect(resultado).toBe('não há links');
   })
-  it('Deve lançar um erro na falta de arquivo', () => {
+  it('deve lançar um erro na falta de arquivo', () => {
     async function capturaErro() {
-      await pegaArquivo('C:\Users\Luky\Desktop\Códigos JS\NodeJS - Biblioteca\teste\arquivos')
+      await pegaArquivo('C:/Users/Luky/Desktop/Códigos JS/NodeJS/Biblioteca/test/arquivos')
       expect(capturaErro).toThrowError(/não há arquivo no caminho/)
     }
   })

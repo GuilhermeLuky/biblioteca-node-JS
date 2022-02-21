@@ -8,11 +8,11 @@ function extraiLinks(texto) {
   while((temp = regex.exec(texto)) !== null) {
     arrayResultados.push({ [temp[1]]: temp[2] })
   }
-  return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;
+  return arrayResultados.length === 0 ? 'não há links' : arrayResultados;
 }
 
 function trataErro(erro) {
-  throw new Error(chalk.red(erro.code, 'Não há arquivo no caminho'));
+  throw new Error(chalk.red(erro.code, 'não há arquivo no caminho'));
 }
 
 async function pegaArquivo(caminhoDoArquivo) {
